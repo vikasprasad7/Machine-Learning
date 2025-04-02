@@ -1,0 +1,111 @@
+import numpy as np 
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+df = pd.read_csv('D:/Downloads/train_default/train.csv')
+df.head()
+
+df.isnull().sum()
+
+group = df.groupby('Grade')
+group.size()
+
+grade = {'A':1, 'B':2, 'C':3, 'D':4, 'E':5, 'F':6, 'G':7}
+df['Grade'] = df['Grade'].map(grade)
+
+df.head()
+
+group = df.groupby('Sub Grade')
+group.size()
+
+subgrade = {'A1':1,'A2':2,'A3':3,'A4':4,'A5':5,'B1':6,'B2':7,'B3':8,'B4':9,'B5':10,
+           'C1':11,'C2':12,'C3':13,'C4':14,'C5':15,'D1':16,'D2':17,'D3':18,'D4':19,'D5':20,
+           'E1':21,'E2':22,'E3':23,'E4':24,'E5':25,'F1':26,'F2':27,'F3':28,'F4':29,'F5':30,
+           'G1':31,'G2':32,'G3':33,'G4':34,'G5':35}
+df['Sub Grade'] = df['Sub Grade'].map(subgrade)
+
+df.head()
+
+group = df.groupby('Employment Duration')
+group.size()
+
+empldur = {'MORTGAGE':1,'OWN':2,'RENT':3}
+df['Employment Duration'] = df['Employment Duration'].map(empldur)
+
+df.head()
+
+df[['Home Ownership','Verification Status', 'Payment Plan', 'Loan Title', 'Debit to Income', 'Delinquency - two years', 'Inquires - six months', 'Open Account', 'Public Record', 'Revolving Balance']].head()
+
+group = df.groupby('Verification Status')
+group.size()
+
+verification = {'Not Verified':1, 'Source Verified':2, 'Verified':3}
+df['Verification Status'] = df['Verification Status'].map(verification)
+
+group = df.groupby('Payment Plan')
+group.size()
+
+payplan = {'n':1}
+df['Payment Plan'] = df['Payment Plan'].map(payplan)
+
+group = df.groupby('Loan Title')
+group.size()
+
+df['Loan Title'].unique()
+
+df['Loan Title'].nunique()
+
+loanTitle = {'Debt Consolidation':1, 'Debt consolidation':1, 'DEBT CONSOLIDATION':1, 'Debt Consolidation Loan':1, 'debt':1, 'debt consolidation':1, 'get out of debt':1, 'Debt':1, 'Credit Card Debt':1, 'Debt Consolidation 2013':1, 'debt loan':1, 'Get Debt Free':1, 'Debt Reduction':1, 'Debt Payoff':1, 'Debt Loan':1, 'Debt Free':1, 'debt consolidation loan':1, 'Debt payoff':1,
+            'Home improvement':2, 'Home Improvement':2, 'home improvement':2, 'Home Improvement Loan':2, 
+            'Home buying':3, 'Home':3, 'Home loan':3, 'House':3, 
+            'Credit card refinancing':4, 'Credit Consolidation':4, 'Credit Cards':4, 'credit card consolidation':4, 'Credit card payoff':4, 'Credit Card Consolidation':4, 'credit card':4, 'Credit Card Refi':4, 'Credit Card Loan':4, 'Credit Card Debt':4, 'Credit Card':4, 'Credit Card Refinance':4, 'Credit Loan':4, 'credit card refinance':4, 'Credit Card consolidation':4, 'Credit Card Paydown':4, 'Credit card pay off':4, 'Credit card refinance':4, 'credit pay off':4, 'Credit':4, 'Credit Card Payoff':4, 'Credit payoff':4, 'Credit Card Refinance Loan':4,
+            'CC Refi':5, 'CC Refinance':5, 'CC consolidation':5, 'CC-Refinance':5, 'CC Consolidation':5, 'CC Loan':5, 'CC':5, 'Green loan':5, 'Loan 1':5, 'MYLOAN':5, 'My Loan':5, 'Loan':5, 
+            'Other':6,
+            'Moving and Relocation':7,
+            'Medical expenses':8, 'Medical':8, 'Medical loan':8, 
+            'Refinance':9, 'refi':9, 'Refinance Loan':9, 
+            'Lending Club':10, 'Lending loan':10, 
+            'Major Purchase':11,
+            'Vacation':12, 'vacation':12, 
+            'Business':13, 
+            'Personal Loan':14, 'Personal loan':14, 'Personal':14, 'personal':14, 
+            'consolidate':15, 'Consolidation':15, 'Consolidate':15, 'Consolidated':15, 'consolidation loan':15, 'Consolidation Loan':15, 'Bill Consolidation':15, 'consolidation':15, 'CONSOLIDATE':15, 'CONSOLIDATION':15, 'conso':15, 'Loan Consolidation':15,
+            'Card Consolidation':16, 'cards':16, 'Cards':16, 
+            'Car financing':17, 'Car Loan':17, 
+            'Freedom':18, 'Bathroom':18, 
+            'payoff':19, 'Payoff':19, 'Bill Payoff':19, 'pay off bills':19, 'Pay Off':19, 'bills':19,
+            'Wedding Loan':20, 
+            'Pool':21, 
+            'relief':22}
+df['Loan Title'] = df['Loan Title'].map(loanTitle)
+
+df[['Home Ownership','Verification Status', 'Payment Plan', 'Loan Title', 'Debit to Income', 'Delinquency - two years', 'Inquires - six months', 'Open Account', 'Public Record', 'Revolving Balance']].head()
+
+df[['Revolving Utilities', 'Total Accounts', 'Initial List Status', 'Total Received Interest', 'Total Received Late Fee', 'Recoveries', 'Collection Recovery Fee', 'Collection 12 months Medical', 'Application Type', 'Last week Pay']].head()
+
+group = df.groupby('Initial List Status')
+group.size()
+
+listStatus = {'f':1,'w':2}
+df['Initial List Status'] = df['Initial List Status'].map(listStatus)
+
+group = df.groupby('Application Type')
+group.size()
+
+appl = {'INDIVIDUAL':1,'JOINT':2}
+df['Application Type'] = df['Application Type'].map(appl)
+
+df[['Revolving Utilities', 'Total Accounts', 'Initial List Status', 'Total Received Interest', 'Total Received Late Fee', 'Recoveries', 'Collection Recovery Fee', 'Collection 12 months Medical', 'Application Type', 'Last week Pay']].head()
+
+df[['Accounts Delinquent','Total Collection Amount','Total Current Balance','Total Revolving Credit Limit','Loan Status']].head()
+
+X = df[['Term']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
