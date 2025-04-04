@@ -109,3 +109,385 @@ log_reg.fit(X_train, y_train)
 y_pred = log_reg.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Grade']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Sub Grade']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Employment Duration']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Verification Status']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Payment Plan']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+df['Loan Title'].head()
+
+df.isnull().sum()
+
+df['Loan Title'].fillna(1, inplace=True)
+
+df.isnull().sum()
+
+X = df[['Loan Title']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Delinquency - two years']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Public Record']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Initial List Status']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Application Type']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Loan Amount']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Funded Amount']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Funded Amount Investor']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Interest Rate']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Home Ownership']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Debit to Income']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Inquires - six months']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Open Account']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Revolving Balance']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Revolving Utilities']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Total Accounts']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Total Received Interest']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Total Received Late Fee']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Recoveries']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+X = df[['Collection Recovery Fee']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Collection 12 months Medical']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Last week Pay']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Total Collection Amount']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Total Current Balance']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+X = df[['Total Revolving Credit Limit']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 0.91
+
+df['DeGrade'] = df['Loan Status']/df['Grade']
+
+X = df[['DeGrade']]
+y = df['Loan Status']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+Accuracy: 1.00
