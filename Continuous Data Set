@@ -1,0 +1,335 @@
+import pandas as pd
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error, r2_score
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('D:/Downloads/Other/Data/bollywood2.csv')
+df.head(10)
+
+df.isnull().sum()
+
+group = df.groupby('ReleaseTime')
+group.size()
+
+group = df.groupby('Genre')
+group.size()
+
+time = {'FS':1,'HS':2,'LW':3,'N':4}
+df['ReleaseTime'] = df['ReleaseTime'].map(time)
+df.head(10)
+
+genre = {' Drama ':1,'Action':2,'Action ':2,'Comedy':3,'Romance':4,'Thriller':5,'Thriller ':5}
+df['Genre'] = df['Genre'].map(genre)
+df.head(10)
+
+df = df[:148]
+
+X = df[["Budget"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.46
+
+X = df[["ReleaseTime"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.02
+
+X = df[["Genre"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: -0.07
+
+X = df[["Views"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.66
+
+X = df[["Likes"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.79
+
+X = df[["Dislikes"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.71
+
+X = df[["YoutubeLikes"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.79
+
+X = df[["Budget","Likes"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.64
+
+X = df[["Budget","Likes","Dislikes"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.62
+
+X = df[["Budget","Views"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.54
+
+X = df[["Budget","Views","Likes"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.66
+
+X = df[["Budget","Views","Likes","Dislikes"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.65
+
+X = df[["Genre","ReleaseTime",]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.07
+
+X = df[["Genre","ReleaseTime","Budget"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.37
+
+X = df[["NetProfit"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.85
+
+X = df[["NetProfit","Views"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.91
+
+X = df[["NetProfit","Views","Likes"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.91
+
+X = df[["NetProfit","Views","Likes","Dislikes"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.91
+
+X = df[["NetProfit","Likes"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.91
+
+X = df[["NetProfit","Genre"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.85
+
+X = df[["NetProfit","Genre","Likes"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.91
+
+X = df[["NetProfit","Genre","Likes","ReleaseTime"]]
+y = df["BoxOfficeCollection"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=43)
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+#mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+#print(f'Mean Squared Error: {mse:.2f}')
+print(f'R² Score: {r2:.2f}')
+
+R² Score: 0.90
